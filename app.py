@@ -10,6 +10,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from dotenv import load_dotenv
+import openai
 
 load_dotenv()
 
