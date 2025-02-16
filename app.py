@@ -13,10 +13,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-openai_api_key = st.secrets["OPENAI_API_KEY"]["OPENAI_API_KEY"]
-
-if not openai_api_key:
-    raise ValueError("❌ OPENAI_API_KEY is not set. Please check your environment variables.")
+api_key = st.secrets["openai"]["api_key"]
+openai.api_key = api_key    
 
 # Use the key in your code
 # os.environ["OPENAI_API_KEY"] = openai_api_key
@@ -34,7 +32,7 @@ embeddings = OpenAIEmbeddings(
 faiss_index, metadata_list = load_faiss_index(embeddings)
 
 
-llm = ChatOpenAI(model="gpt-4", temperature=0)
+llm = ChatOpenAI(model="gpt-4", temperature=0,openai_api_key=api_key)
 query_prompt = PromptTemplate(
     input_variables=["query"],
      template="""

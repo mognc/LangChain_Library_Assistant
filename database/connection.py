@@ -5,7 +5,7 @@ import os
 load_dotenv()
 
 def get_database():
-    mongo_uri = st.secrets["MONGO_URI"]
+    mongo_uri = st.secrets["mongo"]["uri"]
     if not mongo_uri:
         raise ValueError("❌ MONGO_URI is not set. Please check your environment variables.")
     
