@@ -34,8 +34,8 @@ def create_faiss_index(books_with_embeddings):
 
 def load_faiss_index(embeddings):
     try:
-        faiss_index = FAISS.load_local("data\Faiss_index", embeddings,allow_dangerous_deserialization=True)
-        with open("data\metadata.pkl", "rb") as f:
+        faiss_index = FAISS.load_local("data/Faiss_index", embeddings,allow_dangerous_deserialization=True)
+        with open("data/metadata.pkl", "rb") as f:
             metadata_list = pickle.load(f)
         print("✅ FAISS index loaded successfully!")
         return faiss_index, metadata_list
