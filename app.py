@@ -19,7 +19,7 @@ if not openai_api_key:
     raise ValueError("❌ OPENAI_API_KEY is not set. Please check your environment variables.")
 
 # Use the key in your code
-os.environ["OPENAI_API_KEY"] = openai_api_key
+# os.environ["OPENAI_API_KEY"] = openai_api_key
 
 
 db = get_database()
