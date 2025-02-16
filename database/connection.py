@@ -1,10 +1,11 @@
 import pymongo
 from dotenv import load_dotenv
+import streamlit as st
 import os
 load_dotenv()
 
 def get_database():
-    mongo_uri = os.getenv("MONGO_URI")
+    mongo_uri = st.secrets("MONGO_URI")
     if not mongo_uri:
         raise ValueError("❌ MONGO_URI is not set. Please check your environment variables.")
     
