@@ -26,6 +26,7 @@ collection = db.books
 test_connection()
 
 embeddings = OpenAIEmbeddings(
+    openai_api_key=api_key,
     model="text-embedding-ada-002"
 )
 
