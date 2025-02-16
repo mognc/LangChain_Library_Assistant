@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+openai_api_key = st.secrets["OPENAI_API_KEY"]["OPENAI_API_KEY"]
 
 if not openai_api_key:
     raise ValueError("❌ OPENAI_API_KEY is not set. Please check your environment variables.")
